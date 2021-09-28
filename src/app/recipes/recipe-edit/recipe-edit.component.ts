@@ -60,4 +60,7 @@ export class RecipeEditComponent implements OnInit {
   {
     console.log(this.recipeForm);
   }
+  getControl() {
+    return (this.recipeForm.get('ingredients') as FormArray).controls;
+  }
 }

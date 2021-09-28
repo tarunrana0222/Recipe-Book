@@ -38,16 +38,17 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
-                  <div class="row form-group">
+                <div class="col-xs-12" formArrayName="ingredients">
+                  <div class="row form-group" *ngFor="let ingredientCtrl of getControl(); let i = index"
+                  [formGroupName]="i" >
                       <div class="col-xs-4">
-                          <input class="form-control " placeholder="Name " type="text" name="name" id="">
+                          <input class="form-control " placeholder="Name " type="text" name="name" id="" formControlName="name">
                         </div>
                         <div class="col-xs-4">
-                          <input class="form-control " placeholder="Amount " type="number" name="amount" id="">
+                          <input class="form-control " placeholder="Amount " type="number" name="amount" id="" formControlName="amount">
                         </div>
                         <div class="col-xs-2">
-                          <input class="form-control " placeholder="Unit " type="text" name="unit" id="">
+                          <input class="form-control " placeholder="Unit " type="text" name="unit" id="" formControlName="unit">
                         </div>
                         <div class="col-xs-2 ">
                         <button type="button" class="btn btn-danger">X</button>
